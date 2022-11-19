@@ -98,7 +98,7 @@ aa=plot_plotly(m, forecast)
 
 
 plot_components_plotly(m, forecast)
-rad=st.sidebar.radio("Menu",["History of Ethereum","Ethereum Price Prediction","Custom","About Us"])
+rad=st.sidebar.radio("Menu",["History of Ethereum","Ethereum Price Prediction","Custom"])
 if rad == "History of Ethereum":
   progress = st.progress(0)
   for i in range(0,2):
