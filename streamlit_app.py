@@ -140,15 +140,6 @@ elif rad == "Custom":
       #       j+=1
       #       if(j>10):
       #         break
-else:
-  progress = st.progress(0)
-  for i in range(0,2):
-    time.sleep(0.2)
-    progress.progress((i+1)*100-100)
-  
-  st.success("Thank you for knowing about us")
-  st.balloons()
-  st.write("### We are Computer Science Undergraduates from Saveetha Engineering College")
 footer="""<style>
 a:link , a:visited{
 color: blue;
