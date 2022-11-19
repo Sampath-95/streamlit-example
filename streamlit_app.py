@@ -56,30 +56,7 @@ bb=fig.add_trace(go.Scatter(x=x, y=y))
 fig.update_layout(
     title_text="Time series plot of Ethereum Open Price",
 )
-fig2 = go.Figure(data=[go.Candlestick(x=eth_df['Date'],
-                open=eth_df['Open'],
-                high=eth_df['High'],
-                low=eth_df['Low'],
-                close=eth_df['Close'])])
-# st.write("# History of Ethereum with Candlesticks")
 
-fig2.update_layout(
-    xaxis=dict(
-        rangeselector=dict(
-            buttons=list(
-                [
-                    dict(count=1, label="1m", step="month", stepmode="backward"),
-                    dict(count=6, label="6m", step="month", stepmode="backward"),
-                    dict(count=1, label="YTD", step="year", stepmode="todate"),
-                    dict(count=1, label="1y", step="year", stepmode="backward"),
-                    dict(step="all"),
-                ]
-            )
-        ),
-        rangeslider=dict(visible=True),
-        type="date",
-    )
-)
 
 fig.update_layout(
     xaxis=dict(
@@ -121,7 +98,7 @@ aa=plot_plotly(m, forecast)
 
 
 plot_components_plotly(m, forecast)
-rad=st.sidebar.radio("Menu",["History of Ethereum","History of Ethereum with Candlesticks","Ethereum Price Prediction","Custom","About Us"])
+rad=st.sidebar.radio("Menu",["History of Ethereum","Ethereum Price Prediction","Custom","About Us"])
 if rad == "History of Ethereum":
   progress = st.progress(0)
   for i in range(0,2):
@@ -129,13 +106,6 @@ if rad == "History of Ethereum":
     progress.progress((i+1)*100-100)
   st.write("# History of Ethereum")
   st.write(bb)
-elif rad == "History of Ethereum with Candlesticks":
-  progress = st.progress(0)
-  for i in range(0,2):
-    time.sleep(0.2)
-    progress.progress((i+1)*100-100)
-  st.write("# History of Ethereum with Candlesticks")
-  st.write(fig2)
 elif rad == "Ethereum Price Prediction":
   progress = st.progress(0)
   for i in range(0,2):
